@@ -104,26 +104,33 @@
     <script type="text/javascript">
         // 创建假数据
         var points = [{
-            "lng": 118.790554,
-            "lat": 32.048009,
-            "type": "已到达",
-            "place": "新街口",
-            "name": "哈哈哈",
-            "img": "<img src=https://www.lixiaomu.fun/img/banner-blog.webp width=200px height=100px>"
+            "lng": 122.037459,
+            "lat": 37.53202,
+            "type": "已打卡",
+            "place": "威海火炬八街/环海路(路口)",
+            "name": "23年4月，去早了天有点冷，没怎么下水，海边真舒服。<a href=/ target=_blank>更多内容</a>",
+            "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/about/202305231911424.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/about/202305231911424.jpg  height=250px></a>"
         }, {
-            "lng": 118.790554,
-            "lat": 32.028559,
+            "lng": 120.12792,
+            "lat": 30.228932,
             "type": "在路上",
-            "place": "上海长宁金钟路633号",
-            "name": "哈哈",
-            "img": "<img src=https://www.lixiaomu.fun/img/banner-blog.webp width=200px height=100px>"
+            "place": "杭州西湖",
+            "name": "",
+            "img": "<a href=https://answer.baidu.com/answer/land?params=UC24Ls9OSuJNJlePeVuh9f%2BEGe3qv9lpGAGoe5mgCt5fpsqsgK0zhmaSH0plFhsFyN4bkMPDEXQ%2Bhys%2FM9aRi3WoXFViynLPO%2BG1f9o727b4h5AcnoWuVSauWEcjVrV1IXJtCBUa0XYEHBMUqUACcJFbvkTMpXMRGaep2DnRHDLlyf87xWzG%2FJELA20t%2BRRiP0twzs7yvqm5z2a3TqHxfg%3D%3D&from=dqa&lid=d546ec0800053256&word=%E8%A5%BF%E6%B9%96%E6%94%BB%E7%95%A5  target=_blank>提前查看攻略</a>"
         }, {
-            "lng": 118.790554,
-            "lat": 32.018009,
+            "lng": 118.779108,
+            "lat": 32.036275,
             "type": "猫咪",
-            "place": "新街口",
-            "name": "哈哈哈",
-            "img": "<img src=https://www.lixiaomu.fun/img/banner-blog.webp width=200px height=100px>"
+            "place": "木屐巷",
+            "name": "一家好几口，具体不清楚，大概有八九只",
+            "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091614998.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091614998.jpg  height=250px></a>"
+        }, {
+            "lng": 118.792888,
+            "lat": 32.056102,
+            "type": "猫咪",
+            "place": "南京市玄武区珠江路30号",
+            "name": "兰州拉面，一只可爱的小橘猫，不怕人！！！",
+            "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091619986.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091619986.jpg  height=250px></a>"
         }, ];
 
         // 在指定容器创建地图实例并设置最大最小缩放级别
@@ -133,7 +140,7 @@
         });
 
         //初始化地图，设置中心点和显示级别
-        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 13);
+        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 11);
 
         //开启鼠标滚轮缩放功能，仅对PC上有效
         map.enableScrollWheelZoom(true);
@@ -168,7 +175,7 @@
                         //imageOffset: new BMap.Size(0, -12 * 25) 
                     });
                 }
-                if (points[i].type == "已到达") {
+                if (points[i].type == "已打卡") {
                     myIcon = new BMap.Icon("images/normal.png", new BMap.Size(32, 32), {
                         // 指定定位位置
                         offset: new BMap.Size(16, 32),
@@ -206,13 +213,13 @@
                 sContent += '       <span class="info_span">地点：</span>';
                 sContent += '       <span>' + point.place + '</span>';
                 sContent += '   </li>';
-                sContent += '   <li class="info_lierr">';
-                sContent += '       <span class="info_span">备注：</span>';
-                sContent += '       <span>' + point.name + '</span>';
-                sContent += '   </li>';
+                // sContent += '   <li class="info_lierr">';
+                // sContent += '       <span class="info_span">备注：</span>';
+                // sContent += '       <span>' + point.name + '</span>';
+                // sContent += '   </li>';
                 sContent += '   <li class="info_lierr_img">';
-                // sContent += '       <span class="info_span">图片：</span>';
-                sContent += '       <div>' + point.img + '</div>';
+                sContent += '       <span class="info_span">备注：</span>';
+                sContent += '       <span>' + point.img + '</span>';
                 sContent += '   </li>';
                 sContent += '   <li class="ta-c info_lierr">';
                 sContent += '       <div class="btn" onclick=func("' + point.name + '")>' + "旅途见" + '</div>';
@@ -239,7 +246,7 @@
                 sContent += '   </li>';
                 sContent += '</ul>';
             }
-            if (point.type == "已到达") {
+            if (point.type == "已打卡") {
                 sContent += '<ul class="info_ul info_ui_Nimg">';
                 sContent += '   <li class="info_li">';
                 sContent += '       <span class="info_span">状态：</span>';
@@ -270,7 +277,7 @@
         // 弹窗增加点击事件
         function func(data) {
             // alert("你好啊" + data + "\n旅途见");
-            alert("你好啊" + "\n---" + "\n定个时间,旅途见咯~");
+            alert("Hello~" + "\n---" + "\n定个时间,旅途见咯~");
         }
     </script>
 </body>
