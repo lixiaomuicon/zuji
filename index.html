@@ -51,6 +51,10 @@
             color: #0C8816;
         }
         
+        .info_li_img {
+            height: 260px;
+        }
+        
         .info_lierr {
             line-height: 26px;
             font-size: 15px;
@@ -59,7 +63,7 @@
         }
         
         .info_span {
-            width: 80px;
+            width: 45px;
             display: inline-block;
         }
         
@@ -78,19 +82,6 @@
         .ta-c {
             text-align: center;
             margin-top: 10px;
-        }
-        
-        .info_lierr_img {
-            /* line-height: 26px; */
-            /* font-size: 15px; */
-            color: #D81E06;
-            border: none;
-        }
-        
-        .info_li_img {
-            /* line-height: 26px; */
-            /* font-size: 15px; */
-            color: #0C8816;
         }
     </style>
 </head>
@@ -123,21 +114,21 @@
                 "type": "猫咪",
                 "place": "木屐巷",
                 "name": "一家好几口，具体不清楚，大概有八九只",
-                "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091614998.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091614998.jpg  height=250px></a>"
+                "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091614998.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091614998.jpg width=375px height=375px></a>"
             }, {
                 "lng": 118.792888,
                 "lat": 32.056102,
                 "type": "猫咪",
                 "place": "南京市玄武区珠江路30号",
                 "name": "兰州拉面，一只可爱的小橘猫，不怕人！！！",
-                "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091619986.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091619986.jpg  height=250px></a>"
+                "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091619986.jpg target=_blank> <img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091619986.jpg width=375px height=229px></a>"
             }, {
                 "lng": 118.809396,
                 "lat": 32.098252,
                 "type": "已打卡",
                 "place": "南京红山森林动物园",
                 "name": "",
-                "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711174.jpg target=_blank><img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711174.jpg height=250px></a><a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711173.jpg target=_blank><img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711173.jpg height=250px></a><a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711175.jpg target=_blank><img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711175.jpg height=250px></a>"
+                "img": "<a href=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711173.jpg target=_blank><img src=https://cdn.jsdelivr.net/gh/lixiaomuicon/photo_bed@main/img/202403091711173.jpg width=375px height=255px></a>"
             },
 
 
@@ -147,7 +138,7 @@
             // "type": "已打卡",
             // "place": "",
             // "name": "",
-            // "img": "<a href= target=_blank> <img src= height=250px></a>"
+            // "img": "<a href= target=_blank> <img src= width=300px height=200px></a>"
             // },
         ];
 
@@ -158,7 +149,7 @@
         });
 
         //初始化地图，设置中心点和显示级别
-        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 11);
+        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 12);
 
         //开启鼠标滚轮缩放功能，仅对PC上有效
         map.enableScrollWheelZoom(true);
@@ -231,11 +222,7 @@
                 sContent += '       <span class="info_span">地点：</span>';
                 sContent += '       <span>' + point.place + '</span>';
                 sContent += '   </li>';
-                // sContent += '   <li class="info_lierr">';
-                // sContent += '       <span class="info_span">备注：</span>';
-                // sContent += '       <span>' + point.name + '</span>';
-                // sContent += '   </li>';
-                sContent += '   <li class="info_lierr_img">';
+                sContent += '   <li class="info_lierr">';
                 sContent += '       <span class="info_span">备注：</span>';
                 sContent += '       <span>' + point.img + '</span>';
                 sContent += '   </li>';
@@ -258,7 +245,7 @@
                 sContent += '       <span class="info_span">备注：</span>';
                 sContent += '       <span>' + point.name + '</span>';
                 sContent += '   </li>';
-                sContent += '   <li class="info_li_img">';
+                sContent += '   <li class="info_li">';
                 // sContent += '       <span class="info_span">图片：</span>';
                 sContent += '       <div>' + point.img + '</div>';
                 sContent += '   </li>';
@@ -278,7 +265,7 @@
                 sContent += '       <span class="info_span">备注：</span>';
                 sContent += '       <span>' + point.name + '</span>';
                 sContent += '   </li>';
-                sContent += '   <li class="info_li_img">';
+                sContent += '   <li class="info_li">';
                 // sContent += '       <span class="info_span">图片：</span>';
                 sContent += '       <div>' + point.img + '</div>';
                 sContent += '   </li>';
