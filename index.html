@@ -83,6 +83,41 @@
             text-align: center;
             margin-top: 10px;
         }
+        /* 文字循环 */
+        
+        .weather_info_wrap {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 24rpx;
+            display: flex;
+        }
+        
+        .weather_info {
+            animation: 7s wordsLoop linear infinite normal;
+        }
+        
+        @keyframes wordsLoop {
+            0% {
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+            }
+        }
+        
+        @-webkit-keyframes wordsLoop {
+            0% {
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+            }
+        }
     </style>
     <script>
         (function() {
@@ -96,6 +131,23 @@
 </head>
 
 <body>
+    <div>
+        <b><a>足迹地图</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+        <a>©</a> <a href="https://www.lixiaomu.fun/">李小沐</a>
+    </div>
+
+    <view class="weather_info_wrap">
+        <view class="weather_info">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔊&nbsp;在路上，不为旅行，不因某人，只为在未知的途中遇见未知的自己，以此记录曾经去过的地方及遇见的事物。
+        </view>
+        <view class="weather_info">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔊&nbsp;在路上，不为旅行，不因某人，只为在未知的途中遇见未知的自己，以此记录曾经去过的地方及遇见的事物。
+        </view>
+    </view>
+
+
+
+
     <!-- 地图盒子 -->
     <div id="container"></div>
     <!-- js文件 -->
@@ -167,12 +219,12 @@
 
         // 在指定容器创建地图实例并设置最大最小缩放级别
         var map = new BMap.Map("container", {
-            minZoom: 3,
+            minZoom: 1,
             maxZoom: 25
         });
 
         //初始化地图，设置中心点和显示级别
-        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 14);
+        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 12);
 
         //开启鼠标滚轮缩放功能，仅对PC上有效
         map.enableScrollWheelZoom(true);
