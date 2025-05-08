@@ -147,6 +147,13 @@
     </script>
 </head>
 
+<!-- 进入网页弹窗 -->
+<script type="text/javascript">
+    window.onload = function() {
+        alert("欢迎访问我的足迹地图！这里展示的可能是我去过：印象比较深的地方/住过的地方/遇到的小动物/好吃的店铺...\n\n🐾代表这个位置我遇到的小动物\n🏠代表我居住过的地方\n🍴代表我认为好吃的店铺\n黑色坐标表示旅游过的地方/红色坐标表示计划去的地方");
+    };
+</script>
+
 <body>
     <div style="margin: 0 auto; width: 30%;">
         <b><a>足迹地图</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
@@ -295,7 +302,7 @@
         });
 
         //初始化地图，设置中心点和显示级别
-        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 11);
+        map.centerAndZoom(new BMap.Point(118.790554, 32.048009), 14);
 
         //开启鼠标滚轮缩放功能，仅对PC上有效
         map.enableScrollWheelZoom(true);
